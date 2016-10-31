@@ -1,0 +1,120 @@
+<div class="well">
+  <div class="panel panel-primary" ng-controller="newLabController">
+    <div class="panel-heading">
+      <h3 class="panel-title">รายการ Lab ที่ส่งตรวจ <small>Subtext for header</small>
+      </h3>
+    </div>
+    <div class="panel-body">
+      <form class="form-inline">
+        <div class="form-group">
+          <label for="dateInput">วันที่</label>
+
+          <select class="form-control" ng-model="data.date">
+  <option value="1">1</option>
+  <option value="2">2</option>
+  <option value="3">3</option>
+  <option value="4">4</option>
+  <option value="5">5</option>
+  <option value="6">6</option>
+  <option value="7">7</option>
+  <option value="8">8</option>
+  <option value="9">9</option>
+  <option value="10">10</option>
+  <option value="11">11</option>
+  <option value="12">12</option>
+  <option value="13">13</option>
+  <option value="14">14</option>
+  <option value="15">15</option>
+  <option value="16">16</option>
+  <option value="17">17</option>
+  <option value="18">18</option>
+  <option value="19">19</option>
+  <option value="20">20</option>
+  <option value="21">21</option>
+  <option value="22">22</option>
+  <option value="23">23</option>
+  <option value="24">24</option>
+  <option value="25">25</option>
+  <option value="26">26</option>
+  <option value="27">27</option>
+  <option value="28">28</option>
+  <option value="29">29</option>
+  <option value="30">30</option>
+  <option value="31">31</option>
+  
+</select>
+        </div>
+        <div class="form-group">
+          <label for="orderMonth">เดือน</label>
+          <select class="form-control" ng-model="data.month">
+  <option value="1">ม.ค.</option>
+  <option value="2">ก.พ.</option>
+  <option value="3">มี.ค.</option>
+  <option value="4">เม.ย.</option>
+  <option value="5">พ.ค.</option>
+  <option value="6">มิ.ย.</option>
+  <option value="7">ก.ค.</option>
+  <option value="8">ส.ค.</option>
+  <option value="9">ก.ย.</option>
+  <option value="10">ต.ค.</option>
+  <option value="11">พ.ย.</option>
+  <option value="12">ธ.ค.</option>
+     </select>
+        </div>
+        <div class="form-group">
+          <label for="orderYear">ปี</label>
+          <select class="form-control" ng-model="data.year">
+  <option value="2016">2559</option>
+  <option value="2017">2560</option>
+  <option value="2018">2561</option>
+  <option value="2019">2562</option>
+  <option value="2020">2563</option>
+  <option value="2021">2564</option>
+  <option value="2022">2565</option>
+  <option value="2023">2566</option>
+  <option value="2024">2567</option>
+  <option value="2025">2568</option>
+  <option value="2026">2569</option>
+  <option value="2027">2570</option>
+     </select>
+        </div>
+        <button ng-click="addData()" class="btn btn-default">ตกลง</button>
+      </form>
+
+      <div class="table-responsive">
+        <table class="table table-hover table-bordered">
+          <thead>
+            <tr>
+              <th>ที่</th>
+              <th>HN</th>
+              <th>ชื่อ - นามสกุล</th>
+              <th>ชื่อแลบ</th>
+              <th></th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr ng-show="Lab.length==0">
+              <td style="vertical-align:middle;"><i class="fa fa-ban fa-3x"></i>&nbsp;ไม่มีข้อมูล</td>
+            </tr>
+            <tr ng-repeat="d in Lab">
+              <td>{{$index + 1}}</td>
+              <td>{{d.hn}}</td>
+              <td>{{d.patient}}</td>
+              <td>{{d.form_name}}</td>
+              <td>
+              <button type="button" class="btn btn-large btn-block btn-info" ng-click="sendData(d)">button</button>
+              </td>
+
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+
+    </div>
+  </div>
+
+
+
+</div>
+</div>
